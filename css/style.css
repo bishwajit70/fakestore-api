@@ -1,0 +1,10 @@
+.single-product{
+    box-shadow: 0px 1px 15px rgba(170, 218, 233, 0.753);;
+}
+.single-product img{
+    height: 300px;
+    width: 250px;
+    margin: 10px auto;
+    display: flex;
+    padding: 10px;
+}
