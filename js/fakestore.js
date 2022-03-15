@@ -1,20 +1,37 @@
+const setCategory = () => {
+    fetch('https://fakestoreapi.com/products/categories')
+        .then(res => res.json())
+        .then(data => getCategory(data))
+}
+setCategory()
+const getCategory = (cats) => {
+    console.log(cats)
+    const optionContainer = document.getElementById('option')
+    for (const element of cats) {
+        const option = document.createElement('option');
+        option.setAttribute('value', element);
+        option.setAttribute('id', 'cat')
+        option.innerText = element;
+        optionContainer.appendChild(option);
+    }
 
-// const chooseCategory = () => {
-//     const jewel = document.getElementById('jewelery').value 
-//     const electronics = document.getElementById('electronics').value 
-//     const jewel = document.getElementById('jewelery').value 
-//     const jewel = document.getElementById('jewelery').value 
-//     console.log(jewel)
-//     fetch('https://fakestoreapi.com/products/categories')
-//             .then(res=>res.json())
-//             .then(data=>console.log(data))
-// }
-// chooseCategory()
 
-// const getCategory = () =>{
+}
+const chooseCategory = () => {
+    getCategory()
+    const optionValue = document.getElementById('cat').value
+    console.log(optionValue);
+}
+
+const getOptionHTML = (cat) => {
+    /* const optionDiv = document.createElement('div');
     
-// }
-
+    return `
+    <option value="jewelery"> </option>
+    
+    `;
+    optionDiv.appendChild(option) */
+}
 
 
 
@@ -24,6 +41,7 @@ const getAllProducts = () => {
         .then(res => res.json())
         .then(data => displayProducts(data))
 }
+
 
 const displayProducts = (products) => {
     // console.log(products)
