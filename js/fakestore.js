@@ -1,4 +1,23 @@
 
+// const chooseCategory = () => {
+//     const jewel = document.getElementById('jewelery').value 
+//     const electronics = document.getElementById('electronics').value 
+//     const jewel = document.getElementById('jewelery').value 
+//     const jewel = document.getElementById('jewelery').value 
+//     console.log(jewel)
+//     fetch('https://fakestoreapi.com/products/categories')
+//             .then(res=>res.json())
+//             .then(data=>console.log(data))
+// }
+// chooseCategory()
+
+// const getCategory = () =>{
+    
+// }
+
+
+
+
 const getAllProducts = () => {
     const url = `https://fakestoreapi.com/products`;
     fetch(url)
@@ -8,8 +27,8 @@ const getAllProducts = () => {
 
 const displayProducts = (products) => {
     // console.log(products)
-    if (products.length >= 10) {
-        products = products.slice(0, 9)
+    if (products.length >= 20) {
+        products = products.slice(0, 18)
         const allProductsHTML = products.map(product => getProductHTML(product))
         const productContainer = document.getElementById('product-container');
         productContainer.innerHTML = allProductsHTML.join(' ');
